@@ -62,7 +62,7 @@
 </td>
 <td>
 <div class="infoBox duration">
-<div class="counter">2.344s</div>
+<div class="counter">2.145s</div>
 <p>duration</p>
 </div>
 </td>
@@ -99,7 +99,7 @@
 <td>1</td>
 <td>0</td>
 <td>0</td>
-<td>0.617s</td>
+<td>0.624s</td>
 <td class="success">100%</td>
 </tr>
 </table>
@@ -108,8 +108,8 @@
 <div class="tab">
 <h2>standard output</h2>
 <span class="code">
-<pre id="root-0-test-stdout-com.rikkei.b1.ChoreographySagaApplicationTests">20:22:20.282 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.rikkei.b1.ChoreographySagaApplicationTests]: ChoreographySagaApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-20:22:20.379 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.rikkei.b1.ChoreographySagaApplication for test class com.rikkei.b1.ChoreographySagaApplicationTests
+<pre id="root-0-test-stdout-com.rikkei.b1.ChoreographySagaApplicationTests">09:24:26.076 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.rikkei.b1.ChoreographySagaApplicationTests]: ChoreographySagaApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+09:24:26.158 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.rikkei.b1.TwoPhaseCommitApplication for test class com.rikkei.b1.ChoreographySagaApplicationTests
 
   .   ____          _            __ _ _
  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
@@ -120,9 +120,62 @@
 
  :: Spring Boot ::                (v3.3.3)
 
-2026-09-23T20:22:20.724+07:00  INFO 5760 --- [    Test worker] c.r.b1.ChoreographySagaApplicationTests  : Starting ChoreographySagaApplicationTests using Java 23.0.2 with PID 5760 (started by LE THANH CUONG in D:\RIKKEI\RIKKEI_MicroServiceSystem\ss15\b1)
-2026-09-23T20:22:20.725+07:00  INFO 5760 --- [    Test worker] c.r.b1.ChoreographySagaApplicationTests  : No active profile set, falling back to 1 default profile: &quot;default&quot;
-2026-09-23T20:22:21.846+07:00  INFO 5760 --- [    Test worker] c.r.b1.ChoreographySagaApplicationTests  : Started ChoreographySagaApplicationTests in 1.317 seconds (process running for 2.332)
+2026-09-24T09:24:26.448+07:00  INFO 22612 --- [    Test worker] c.r.b1.ChoreographySagaApplicationTests  : Starting ChoreographySagaApplicationTests using Java 23.0.2 with PID 22612 (started by LE THANH CUONG in D:\RIKKEI\RIKKEI_MicroServiceSystem\ss15\b1)
+2026-09-24T09:24:26.449+07:00  INFO 22612 --- [    Test worker] c.r.b1.ChoreographySagaApplicationTests  : No active profile set, falling back to 1 default profile: &quot;default&quot;
+2026-09-24T09:24:27.439+07:00  INFO 22612 --- [    Test worker] c.r.b1.ChoreographySagaApplicationTests  : Started ChoreographySagaApplicationTests in 1.148 seconds (process running for 2.07)
+2026-09-24T09:24:27.441+07:00  INFO 22612 --- [    Test worker] c.r.b1.runner.TwoPhaseCommitDemoRunner   : 
+==========================================================================
+2026-09-24T09:24:27.441+07:00  INFO 22612 --- [    Test worker] c.r.b1.runner.TwoPhaseCommitDemoRunner   : RUNNING 2PC (TWO-PHASE COMMIT) PROTOCOL SIMULATION DEMO
+2026-09-24T09:24:27.441+07:00  INFO 22612 --- [    Test worker] c.r.b1.runner.TwoPhaseCommitDemoRunner   : ==========================================================================
+2026-09-24T09:24:27.441+07:00  INFO 22612 --- [    Test worker] c.r.b1.runner.TwoPhaseCommitDemoRunner   : 
+&gt;&gt;&gt; DEMO SCENARIO 1: SUCCESSFUL BOOKING (VOTE_COMMIT -&gt; COMMIT)
+2026-09-24T09:24:27.441+07:00  INFO 22612 --- [    Test worker] c.r.b.c.TwoPhaseCommitCoordinator        : ==========================================================================
+2026-09-24T09:24:27.441+07:00  INFO 22612 --- [    Test worker] c.r.b.c.TwoPhaseCommitCoordinator        : STARTING 2PC TRANSACTION FOR BOOKING ID: BK-2PC-SUCCESS-001
+2026-09-24T09:24:27.442+07:00  INFO 22612 --- [    Test worker] c.r.b.c.TwoPhaseCommitCoordinator        : ==========================================================================
+2026-09-24T09:24:27.442+07:00  INFO 22612 --- [    Test worker] c.r.b.c.TwoPhaseCommitCoordinator        : [COORDINATOR] Phase 1: Sending PREPARE to TrainService &amp; WalletService...
+2026-09-24T09:24:27.442+07:00  INFO 22612 --- [    Test worker] com.rikkei.b1.service.TrainService       : [2PC - Phase 1: Prepare] TrainService received prepare request for Booking: BK-2PC-SUCCESS-001, Train: TRAIN-SE1, Seat: SEAT-15
+2026-09-24T09:24:27.442+07:00  INFO 22612 --- [    Test worker] com.rikkei.b1.service.TrainService       : [2PC - Phase 1: Prepare] TrainService VOTE_COMMIT: Seat SEAT-15 on Train TRAIN-SE1 held temporarily.
+2026-09-24T09:24:27.443+07:00  INFO 22612 --- [    Test worker] com.rikkei.b1.service.WalletService      : [2PC - Phase 1: Prepare] WalletService received prepare request for Booking: BK-2PC-SUCCESS-001, User: user123, Amount: $100.0
+2026-09-24T09:24:27.443+07:00  INFO 22612 --- [    Test worker] com.rikkei.b1.service.WalletService      : [2PC - Phase 1: Prepare] WalletService VOTE_COMMIT: Locked $100.0 for User user123. Remaining balance: $400.0
+2026-09-24T09:24:27.443+07:00  INFO 22612 --- [    Test worker] c.r.b.c.TwoPhaseCommitCoordinator        : [COORDINATOR] Phase 1 Complete. Votes Received -&gt; TrainService: VOTE_COMMIT, WalletService: VOTE_COMMIT
+2026-09-24T09:24:27.443+07:00  INFO 22612 --- [    Test worker] c.r.b.c.TwoPhaseCommitCoordinator        : [COORDINATOR] Phase 2 Decision: GLOBAL COMMIT! Sending COMMIT to all participants.
+2026-09-24T09:24:27.443+07:00  INFO 22612 --- [    Test worker] com.rikkei.b1.service.TrainService       : [2PC - Phase 2: Commit] TrainService committing booking BK-2PC-SUCCESS-001: Seat SEAT-15 on Train TRAIN-SE1 confirmed.
+2026-09-24T09:24:27.443+07:00  INFO 22612 --- [    Test worker] com.rikkei.b1.service.WalletService      : [2PC - Phase 2: Commit] WalletService committing booking BK-2PC-SUCCESS-001: Deducting locked funds of $100.0.
+2026-09-24T09:24:27.443+07:00  INFO 22612 --- [    Test worker] c.r.b.c.TwoPhaseCommitCoordinator        : [COORDINATOR] 2PC Transaction SUCCESSFUL for Booking ID: BK-2PC-SUCCESS-001
+2026-09-24T09:24:27.443+07:00  INFO 22612 --- [    Test worker] c.r.b1.runner.TwoPhaseCommitDemoRunner   : 
+&gt;&gt;&gt; DEMO SCENARIO 2: ABORTED BOOKING - INSUFFICIENT WALLET (VOTE_ABORT -&gt; ROLLBACK)
+2026-09-24T09:24:27.443+07:00  INFO 22612 --- [    Test worker] c.r.b.c.TwoPhaseCommitCoordinator        : ==========================================================================
+2026-09-24T09:24:27.443+07:00  INFO 22612 --- [    Test worker] c.r.b.c.TwoPhaseCommitCoordinator        : STARTING 2PC TRANSACTION FOR BOOKING ID: BK-2PC-ABORT-WALLET-002
+2026-09-24T09:24:27.443+07:00  INFO 22612 --- [    Test worker] c.r.b.c.TwoPhaseCommitCoordinator        : ==========================================================================
+2026-09-24T09:24:27.443+07:00  INFO 22612 --- [    Test worker] c.r.b.c.TwoPhaseCommitCoordinator        : [COORDINATOR] Phase 1: Sending PREPARE to TrainService &amp; WalletService...
+2026-09-24T09:24:27.443+07:00  INFO 22612 --- [    Test worker] com.rikkei.b1.service.TrainService       : [2PC - Phase 1: Prepare] TrainService received prepare request for Booking: BK-2PC-ABORT-WALLET-002, Train: TRAIN-SE1, Seat: SEAT-16
+2026-09-24T09:24:27.443+07:00  INFO 22612 --- [    Test worker] com.rikkei.b1.service.TrainService       : [2PC - Phase 1: Prepare] TrainService VOTE_COMMIT: Seat SEAT-16 on Train TRAIN-SE1 held temporarily.
+2026-09-24T09:24:27.443+07:00  INFO 22612 --- [    Test worker] com.rikkei.b1.service.WalletService      : [2PC - Phase 1: Prepare] WalletService received prepare request for Booking: BK-2PC-ABORT-WALLET-002, User: user_poor, Amount: $500.0
+2026-09-24T09:24:27.443+07:00  WARN 22612 --- [    Test worker] com.rikkei.b1.service.WalletService      : [2PC - Phase 1: Prepare] WalletService VOTE_ABORT: Insufficient balance for User user_poor (Current: $10.0, Required: $500.0)
+2026-09-24T09:24:27.443+07:00  INFO 22612 --- [    Test worker] c.r.b.c.TwoPhaseCommitCoordinator        : [COORDINATOR] Phase 1 Complete. Votes Received -&gt; TrainService: VOTE_COMMIT, WalletService: VOTE_ABORT
+2026-09-24T09:24:27.443+07:00  WARN 22612 --- [    Test worker] c.r.b.c.TwoPhaseCommitCoordinator        : [COORDINATOR] Phase 2 Decision: GLOBAL ABORT! Sending ROLLBACK to all participants.
+2026-09-24T09:24:27.443+07:00  INFO 22612 --- [    Test worker] com.rikkei.b1.service.TrainService       : [2PC - Phase 2: Rollback/Abort] TrainService rolling back booking BK-2PC-ABORT-WALLET-002: Releasing seat SEAT-16.
+2026-09-24T09:24:27.443+07:00  INFO 22612 --- [    Test worker] com.rikkei.b1.service.WalletService      : [2PC - Phase 2: Rollback/Abort] WalletService rolling back booking BK-2PC-ABORT-WALLET-002: No funds were locked.
+2026-09-24T09:24:27.444+07:00  WARN 22612 --- [    Test worker] c.r.b.c.TwoPhaseCommitCoordinator        : [COORDINATOR] 2PC Transaction ABORTED for Booking ID: BK-2PC-ABORT-WALLET-002
+2026-09-24T09:24:27.444+07:00  INFO 22612 --- [    Test worker] c.r.b1.runner.TwoPhaseCommitDemoRunner   : 
+&gt;&gt;&gt; DEMO SCENARIO 3: ABORTED BOOKING - SEAT TAKEN (VOTE_ABORT -&gt; ROLLBACK)
+2026-09-24T09:24:27.444+07:00  INFO 22612 --- [    Test worker] c.r.b.c.TwoPhaseCommitCoordinator        : ==========================================================================
+2026-09-24T09:24:27.444+07:00  INFO 22612 --- [    Test worker] c.r.b.c.TwoPhaseCommitCoordinator        : STARTING 2PC TRANSACTION FOR BOOKING ID: BK-2PC-ABORT-TRAIN-003
+2026-09-24T09:24:27.444+07:00  INFO 22612 --- [    Test worker] c.r.b.c.TwoPhaseCommitCoordinator        : ==========================================================================
+2026-09-24T09:24:27.444+07:00  INFO 22612 --- [    Test worker] c.r.b.c.TwoPhaseCommitCoordinator        : [COORDINATOR] Phase 1: Sending PREPARE to TrainService &amp; WalletService...
+2026-09-24T09:24:27.444+07:00  INFO 22612 --- [    Test worker] com.rikkei.b1.service.TrainService       : [2PC - Phase 1: Prepare] TrainService received prepare request for Booking: BK-2PC-ABORT-TRAIN-003, Train: TRAIN-SE1, Seat: TAKEN
+2026-09-24T09:24:27.444+07:00  WARN 22612 --- [    Test worker] com.rikkei.b1.service.TrainService       : [2PC - Phase 1: Prepare] TrainService VOTE_ABORT: Seat TAKEN on Train TRAIN-SE1 is already reserved!
+2026-09-24T09:24:27.444+07:00  INFO 22612 --- [    Test worker] com.rikkei.b1.service.WalletService      : [2PC - Phase 1: Prepare] WalletService received prepare request for Booking: BK-2PC-ABORT-TRAIN-003, User: user123, Amount: $100.0
+2026-09-24T09:24:27.444+07:00  INFO 22612 --- [    Test worker] com.rikkei.b1.service.WalletService      : [2PC - Phase 1: Prepare] WalletService VOTE_COMMIT: Locked $100.0 for User user123. Remaining balance: $300.0
+2026-09-24T09:24:27.444+07:00  INFO 22612 --- [    Test worker] c.r.b.c.TwoPhaseCommitCoordinator        : [COORDINATOR] Phase 1 Complete. Votes Received -&gt; TrainService: VOTE_ABORT, WalletService: VOTE_COMMIT
+2026-09-24T09:24:27.444+07:00  WARN 22612 --- [    Test worker] c.r.b.c.TwoPhaseCommitCoordinator        : [COORDINATOR] Phase 2 Decision: GLOBAL ABORT! Sending ROLLBACK to all participants.
+2026-09-24T09:24:27.444+07:00  INFO 22612 --- [    Test worker] com.rikkei.b1.service.TrainService       : [2PC - Phase 2: Rollback/Abort] TrainService rolling back booking BK-2PC-ABORT-TRAIN-003: Releasing seat TAKEN.
+2026-09-24T09:24:27.444+07:00  INFO 22612 --- [    Test worker] com.rikkei.b1.service.WalletService      : [2PC - Phase 2: Rollback/Abort] WalletService rolling back booking BK-2PC-ABORT-TRAIN-003: Restored $100.0 to User user123. Current balance: $400.0
+2026-09-24T09:24:27.444+07:00  WARN 22612 --- [    Test worker] c.r.b.c.TwoPhaseCommitCoordinator        : [COORDINATOR] 2PC Transaction ABORTED for Booking ID: BK-2PC-ABORT-TRAIN-003
+2026-09-24T09:24:27.444+07:00  INFO 22612 --- [    Test worker] c.r.b1.runner.TwoPhaseCommitDemoRunner   : 
+==========================================================================
+2026-09-24T09:24:27.444+07:00  INFO 22612 --- [    Test worker] c.r.b1.runner.TwoPhaseCommitDemoRunner   : 2PC DEMO COMPLETE
+2026-09-24T09:24:27.444+07:00  INFO 22612 --- [    Test worker] c.r.b1.runner.TwoPhaseCommitDemoRunner   : ==========================================================================
 </pre>
 <button class="clipboard-copy-btn" aria-label="Copy to clipboard" data-copy-element-id="root-0-test-stdout-com.rikkei.b1.ChoreographySagaApplicationTests">Copy</button>
 </span>
@@ -137,7 +190,7 @@
 <input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
 </label>
 </div>Generated by 
-<a href="https://www.gradle.org">Gradle 9.5.1</a> at Sep 23, 2026, 8:22:22 PM</p>
+<a href="https://www.gradle.org">Gradle 9.5.1</a> at Sep 24, 2026, 9:24:28 AM</p>
 </div>
 </div>
 </body>
